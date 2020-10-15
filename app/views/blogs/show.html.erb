@@ -8,6 +8,10 @@
 
 <p><%= @blog.created_at.strftime("Created at %Y/%m/%d") %></p>
 
+<div class="my-3">
+  <%= img_tag(@blog) %>
+</div>
+
 <p>
   <% @blog.tag_list.each do |tag| %>
     <span class="badge badge-primary mr-1 p-2"><%= tags(tag) %></span>

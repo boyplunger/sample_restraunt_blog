@@ -18,7 +18,7 @@ ja:
   home:
     index:
       main: "ようこそ！"
-      sub:  "このブログアプリは Rails 6.0 で作られています"
+      sub:  "これはオススメのご飯屋さんのメニューを紹介する簡易ブログです"
       sign_up: "まずはアカウントを作成してください"
       sign_in: "既にアカウントがある場合はこちらからログインしてください"
 
@@ -35,11 +35,10 @@ ja:
       logout:   ログアウト
       back:     戻る
     tags:
-      entertainment: エンターテイメント
-      travel:        旅行
-      fashion:       ファッション
-      food:          グルメ
-      lifestyle:     生活
-      sports:        スポーツ
-      business:      ビジネス
-      technology:    技術
+      western:  洋食
+      japanese: 和食
+      italian:  イタリアン
+      french:   フレンチ
+      chinese:  中華
+      indian:   インド料理
+      ramen:    ラーメン

@@ -14,10 +14,8 @@
   <div class="my-4">
     <h5><%= t(".favorites") %></h5>
 
-    <% favorites_group_by_tag(current_user.favorite_blogs).each do |tag, ids| %>
-      <%= link_to blogs_path(ids: ids) do %>
-        <span class="badge badge-primary my-2 mr-1 p-2"><%= tag %></span>  <%= ids.size %>
-      <% end %><br />
+    <% current_user.favorite_blogs.each do |blog| %>
+      <%= link_to blog.title, blog_path(blog) %>
     <% end %>
   </div>
 <% end %>

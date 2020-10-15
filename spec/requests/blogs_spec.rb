@@ -30,22 +30,12 @@ RSpec.describe "Blogs", type: :request do
       end
     end
 
-    context "when include ids params" do
-      it 'render to index page specified ids' do
-        blog = Blog.find_by(title: "Title2#{timestamp}")
-        get blogs_path(ids: blog.id)
-        expect(response.status).to eq(200)
-        expect(response.body).not_to include("Title1#{timestamp}")
-        expect(response.body).to include("Title2#{timestamp}")
-      end
-    end
-
     context "when include tag_list" do
       before {
-        create(:blog, title: "Title with tag#{timestamp}", tag_list: "travel")
+        create(:blog, title: "Title with tag#{timestamp}", tag_list: "ramen")
       }
       it 'render to index page specified tags' do
-        get blogs_path(tag_list: ["travel"])
+        get blogs_path(tag_list: ["ramen"])
         expect(response.status).to eq(200)
         expect(response.body).not_to include("Title1#{timestamp}")
         expect(response.body).not_to include("Title2#{timestamp}")
@@ -121,7 +111,7 @@ RSpec.describe "Blogs", type: :request do
             blog: attributes_for(
               :blog,
               title: "Create Blog#{timestamp}",
-              tag_list: ["entertainment", "fashion"]
+              tag_list: ["japanese", "ramen"]
             )
           }
         }.to change { Blog.count }.by(1)
@@ -130,7 +120,7 @@ RSpec.describe "Blogs", type: :request do
         follow_redirect!
         expect(response.body).to include("正常に作成されました")
         expect(response.body).to include("Create Blog#{timestamp}")
-        expect(response.body).to include("エンターテイメント", "ファッション")
+        expect(response.body).to include("和食", "ラーメン")
       end
     end
 
@@ -152,14 +142,14 @@ RSpec.describe "Blogs", type: :request do
               blog: attributes_for(
                 :blog,
                 title: "Create Blog#{timestamp}",
-                tag_list: ["entertainment", "fashion"]
+                tag_list: ["indian", "italian"]
               )
             }
           }.to change { Blog.count }.by(1)
           expect(response.status).to eq(201)
           expect(json_response["title"]).to eq("Create Blog#{timestamp}")
           expect(json_response["user_id"]).to eq(current_user.id)
-          expect(json_response["tag_list"]).to include("entertainment", "fashion")
+          expect(json_response["tag_list"]).to include("indian", "italian")
         end
       end
 
@@ -179,12 +169,12 @@ RSpec.describe "Blogs", type: :request do
     let(:blog) { create(:blog, user: current_user, tag_list: ["entertainment"]) }
     context 'valid params' do
       it "redirect to show page" do
-        put blog_path(blog), params: { blog: { title: "Updated #{timestamp}", tag_list: ["technology"]} }
+        put blog_path(blog), params: { blog: { title: "Updated #{timestamp}", tag_list: ["ramen"]} }
         expect(response).to redirect_to(blog_path(blog))
         follow_redirect!
         expect(response.body).to include("正常に更新されました")
         expect(response.body).to include("Updated #{timestamp}")
-        expect(response.body).to include("技術")
+        expect(response.body).to include("ラーメン")
       end
     end
 

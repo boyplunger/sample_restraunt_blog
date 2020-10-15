@@ -138,6 +138,7 @@ ja:
       title: ユーザー一覧
     show:
       title: アカウント情報
+      favorites: お気に入り
   errors:
     messages:
       already_confirmed: は既に登録済みです。ログインしてください。
