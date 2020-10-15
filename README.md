@@ -1,22 +1,5 @@
-[![CircleCI](https://circleci.com/gh/belion-freee/sns_with_rails6.svg?style=svg)](https://circleci.com/gh/belion-freee/sns_with_rails6)
-
-# SNS App with Rails 6.0
-Ruby on Rails学習者とメンターさん向けのサンプルアプリケーション
-
-## Demo
-サンプルアプリケーションの動作はこのようになります。
-
-<img src="https://user-images.githubusercontent.com/34331230/88256022-0750a180-ccf5-11ea-8849-11a040b4d51f.gif" width="600px">
-
-## 用途
-Rails初学者向けに以下の要件を満たす目的で作成されたサンプルアプリケーション。
-
-- ソースリーディング力の向上
-- GitHubでのプルリクの使い方の理解
-- よくある機能の実装サンプルを掲示することでメンタリングの効率化
-
-## アプリケーションの内容
-このアプリケーションはRails6で制作された簡易ブログです。
+# 簡易ブログアプリ
+オススメのご飯屋さんのメニューを紹介する簡易ブログアプリです。
 
 ### 実装されてる機能の一覧
 
@@ -26,6 +9,9 @@ Rails初学者向けに以下の要件を満たす目的で作成されたサン
 - お気に入り機能
 - 検索機能
 - 画像アップロード機能
+- フォロー機能
+- カテゴリー(タグ)機能
+- 多言語化対応
 - ページネーション
 - Rspecを使ったテスト
 - CircleCIによる自動テスト
@@ -52,13 +38,19 @@ Dockerを使用しているので、ローカルにpullして開発環境を立�
   - 検索機能を実装しています。Ransackではなくて自前で実装してます。
 - [画像アップロード機能](https://github.com/belion-freee/sns_with_rails6/pull/9)
   - carrierwaveを使って画像アップロード機能を実装してます。
+- [フォロー機能](https://github.com/belion-freee/sns_with_rails6/pull/14)
+  - Ajaxを利用してのフォロー機能を実装してます。
+- [カテゴリー(タグ)機能](https://github.com/belion-freee/sns_with_rails6/pull/15)
+  - ブログにカテゴリー機能を実装しています。
+- [多言語化対応](https://github.com/belion-freee/sns_with_rails6/pull/18)
+  - I18nを使っての多言語化対応を実装しています。要するに日本語化対応です。
 - [ページネーション](https://github.com/belion-freee/sns_with_rails6/pull/10)
   - kaminariを使ってページネーション機能を実装してます。
 - [Rspecを使ったテスト](https://github.com/belion-freee/sns_with_rails6/pull/11)
   - Rspecを使って単体テストと統合テストを実装しています。
 - [CircleCIによる自動テスト](https://github.com/belion-freee/sns_with_rails6/pull/12)
   - 自動テストの設定とREADMEへのバッジ追加を実装してます。
-  
+
 #### 参考になりそうなプルリクエスト
 以下は見なくてもいいけど参考になりそうなプルリクエストです。
 
@@ -66,12 +58,14 @@ Dockerを使用しているので、ローカルにpullして開発環境を立�
   - seedsファイルを使って初期データの投入をしています。
 - [デザインの修正](https://github.com/belion-freee/sns_with_rails6/pull/5)
   - Bootstrap4の機能をなるべく使うようにしてます。css書かなくてもわりと調整できます。
+- [Ransack導入](https://github.com/belion-freee/sns_with_rails6/pull/16)
+  - Ransackを導入しています。
 
 ### ローカルで動かす
 GitHubからpullしてきたらプロジェクトフォルダに移動して、`./qs init --webpack`してください。
 
 ```
-$ git clone https://github.com/belion-freee/sns_with_rails6.git <Project name>
+$ git clone https://github.com/belion-freee/sample_restraunt_blog.git <Project name>
 $ cd <Project name>
 $ ./qs init --webpack
 ```
@@ -94,3 +88,14 @@ email: "foo@sample.com"
 password: "Password"
 ```
 
+### 自分のリポジトリへの反映
+自分のGitHubリポジトリを作成した上で、以下のコマンドをプロジェクトフォルダで実行してください。
+
+```
+$ rm -rf .git
+$ git init
+$ git add .
+$ git commit -a -m "Initial Commit"
+$ git remote add origin <自分のGitHubのURL>
+$ git push -u origin master
+```
