@@ -41,3 +41,6 @@ name: "foo"
 email: "foo@sample.com"
 password: "Password"
 ```
+
+ログイン・ログアウト機能
+![douga1](https://user-images.githubusercontent.com/69951545/110927918-96d0c080-8369-11eb-87a7-6b71a7a27ae3.gif)
