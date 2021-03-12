@@ -50,5 +50,3 @@ password: "Password"
 
 検索機能
 ![douga32](https://user-images.githubusercontent.com/69951545/110969970-a0275080-839c-11eb-8810-5b52a2efe94c.gif)
-
-
