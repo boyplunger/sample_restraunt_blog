@@ -42,11 +42,11 @@ email: "foo@sample.com"
 password: "Password"
 ```
 
-ログイン・ログアウト機能
+- ログイン・ログアウト機能
 ![douga1](https://user-images.githubusercontent.com/69951545/110927918-96d0c080-8369-11eb-87a7-6b71a7a27ae3.gif)
 
-ページネーション機能
+- ページネーション機能
 ![douga22](https://user-images.githubusercontent.com/69951545/110968981-82a5b700-839b-11eb-9a0f-c241b447e0e4.gif)
 
-検索機能
+- 検索機能
 ![douga32](https://user-images.githubusercontent.com/69951545/110969970-a0275080-839c-11eb-8810-5b52a2efe94c.gif)
