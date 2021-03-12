@@ -44,3 +44,7 @@ password: "Password"
 
 ログイン・ログアウト機能
 ![douga1](https://user-images.githubusercontent.com/69951545/110927918-96d0c080-8369-11eb-87a7-6b71a7a27ae3.gif)
+
+検索機能
+https://user-images.githubusercontent.com/69951545/110958218-d3171780-838f-11eb-8d99-b7aa38d219d2.mov
+
